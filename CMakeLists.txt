@@ -1,9 +1,16 @@
 cmake_minimum_required(VERSION 3.21.3)
-project(mnist_gan)
+project(mnist_gan_app)
 
+find_package(Torch REQUIRED)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
+
+target_link_libraries(example-app "${TORCH_LIBRARIES}")
+set_property(TARGET example-app PROPERTY CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD 17)
 
 set(EXECUTABLE_OUTPUT_PATH ../bin/)
+add_executable(mnist_gan_app main.cpp)
+
 
 #add_subdirectory(src/etl)
 #add_subdirectory(src/modeling)
