@@ -1,6 +1,6 @@
 data/
 lib/
-
+build/
 # Prerequisites
 *.d
 
