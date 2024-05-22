@@ -15,12 +15,13 @@ add_executable(mnist_gan_app main.cpp)
 
 #add_subdirectory(src/etl)
 #add_subdirectory(src/modeling)
-#add_subdirectory(src/lib/eigen)
+add_subdirectory(lib/libtorch)
 
 #Add the given directories to those the compiler uses to search for include files.
-include_directories(${PROJECT_SOURCE_DIR}/src) 
+include_directories(${PROJECT_SOURCE_DIR}/src
+                    ${PROJECT_SOURCE_DIR}/lib) 
 
-add_executable(${PROJECT_NAME}
+add_executable(${PROJECT_NAME})
     # src/main.cpp
     # src/etl/etl.cpp
     # src/modeling/log_reg.cpp)
