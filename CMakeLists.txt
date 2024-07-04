@@ -1,9 +1,10 @@
-cmake_minimum_required(VERSION 3.21.3)
-project(mnist_gan_app)
+cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+project(mnist_gan)
 
-set(CMAKE_CXX_STANDARD 17)
+find_package(Torch REQUIRED)
 
-add_executable(mnist_gan_app src/main.cpp)
-# set_property(TARGET mnist_gan_app PROPERTY CXX_STANDARD 17)
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY /home/kishen/documents/projects/c++_projects/mnist_gan/build/bin)
 
-set(EXECUTABLE_OUTPUT_PATH bin/)
+add_executable(${CMAKE_PROJECT_NAME} src/main.cpp)
+target_link_libraries(${CMAKE_PROJECT_NAME} "${TORCH_LIBRARIES}")
+set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY CXX_STANDARD 17)

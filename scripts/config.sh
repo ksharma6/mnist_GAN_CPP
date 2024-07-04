@@ -1,3 +1,4 @@
 #! /bin/sh
 
-cmake -DEIGEN_BUILD_DOC=OFF -S . -B build/gits
+cd build/out/
+cmake -DCMAKE_PREFIX_PATH=src/lib/libtorch ../../

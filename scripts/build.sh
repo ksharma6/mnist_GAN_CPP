@@ -1,3 +1,3 @@
 #! /bin/sh
 
-cd build/gits ; make
+cmake --build build/out/ --config Release

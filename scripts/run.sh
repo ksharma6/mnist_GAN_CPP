@@ -1,3 +1,3 @@
 #! /bin/sh
 
-./bin/mnist_gan_app
+./build/bin/mnist_gan
